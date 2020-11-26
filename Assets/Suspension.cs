@@ -98,6 +98,7 @@ public class Suspension : MonoBehaviour
                 forceX = 0.0f;
             }
 
+            
 
             //forceX = Input.GetAxis("Vertical") * 0.5f * springForce;
             forceY = wheelVelocity.x * springForce;

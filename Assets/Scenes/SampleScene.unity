@@ -501,6 +501,36 @@ Transform:
   m_Father: {fileID: 529080742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.373, y: 0, z: 0}
+--- !u!1 &1404858882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404858883}
+  m_Layer: 0
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404858883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404858882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.44, z: 1.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1953481486365692637}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2005360571
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +861,7 @@ Transform:
   - {fileID: 136741278}
   - {fileID: 834588095}
   - {fileID: 2141844757}
+  - {fileID: 1404858883}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -861,6 +892,7 @@ GameObject:
   - component: {fileID: 7625432830069936010}
   - component: {fileID: 2416248919847689974}
   - component: {fileID: 2416248919847689973}
+  - component: {fileID: 2416248919847689975}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -903,6 +935,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8545447256379345787, guid: de84c7aaadfc4cc4293d3475e1eeb5eb, type: 3}
+--- !u!114 &2416248919847689975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2416248919847689972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c17cee32e359c349b528c561bc32ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1404858883}
+  item: {fileID: 5244214054516933734, guid: 00b4a8dc79b25e346ad6f47f25c88584, type: 3}
+  car: {fileID: 1177684307340249191}
 --- !u!33 &2834151513700387024
 MeshFilter:
   m_ObjectHideFlags: 0
