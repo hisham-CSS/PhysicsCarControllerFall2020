@@ -18,11 +18,20 @@ public class Projectile : MonoBehaviour
     public float speed;
     public Rigidbody carRB;
 
+    private float startTime;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         transform.SetParent(null);
+        startTime = Time.time;
+        switch(currentProjectile)
+        {
+            case ProjectileType.Banana:
+                projectileDir.y = 1;
+                rb.AddForce(projectileDir * speed);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -34,8 +43,23 @@ public class Projectile : MonoBehaviour
                 rb.velocity = projectileDir * speed;
                 break;
             case ProjectileType.Banana:
-                projectileDir.y = 1;
-                rb.velocity = projectileDir * speed;
+                //float yVelocity = 0;
+                //float timeAlive = Time.time - startTime;
+                //if (timeAlive > 1)
+                //{
+                //    yVelocity = 1 / timeAlive;
+                //}
+                //else if (timeAlive >= 0)
+                //{
+                //    yVelocity = timeAlive / 1;
+                //}
+                //else
+                //{
+                //    //catch case - will program errors if code doesn't work.
+                //}
+
+                //projectileDir.y = projectileDir.y + yVelocity;
+                //rb.velocity = projectileDir * speed;
                 break;
         }
     }

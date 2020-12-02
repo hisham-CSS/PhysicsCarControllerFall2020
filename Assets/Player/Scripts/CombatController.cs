@@ -11,7 +11,7 @@ public class CombatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        item = null;
     }
 
     // Update is called once per frame
@@ -19,10 +19,23 @@ public class CombatController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            GameObject temp = Instantiate(item, spawnPoint);
-            Projectile tempScript = temp.GetComponent<Projectile>();
-            tempScript.carRB = car.GetComponent<Rigidbody>();
-            tempScript.projectileDir = spawnPoint.forward;
+            if (item)
+            {
+                GameObject temp = Instantiate(item, spawnPoint);
+                Projectile tempScript = temp.GetComponent<Projectile>();
+                tempScript.carRB = car.GetComponent<Rigidbody>();
+                tempScript.projectileDir = spawnPoint.forward;
+                item = null;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "ItemBox")
+        {
+            item = other.gameObject.GetComponent<ItemGeneration>().GetItem();
+            Destroy(other.gameObject);
         }
     }
 }
